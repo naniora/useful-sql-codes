@@ -1,0 +1,5 @@
+//Use this bit to concat/stuff the contents on one coulmn into one cell.
+Stuff((SELECT DISTINCT ';' + fl1.ccyyq -- custome column
+                       FROM   ##flist fl1 -- custome table
+                       WHERE  fl.employer_account_id = fl1.employer_account_id 
+                       FOR xml path('')), 1, 1, '') AS open_quarters 
